@@ -1,11 +1,14 @@
 package wish;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 public class SumPaths2 {
-	
+    static List<List<Integer>> set = new ArrayList<>();
+	// 去重就用set
 	// time is O(n!) - factorial time
 	// 空间复杂度：O(N)
 	public static void findPaths(int[][] mat, List<Integer> path, int i, int j, int sum) {
@@ -13,13 +16,14 @@ public class SumPaths2 {
 		if (mat == null || mat.length == 0) {
 			return;
 		}
+
 		int M = mat.length;
 		int N = mat[0].length;
 
 		// if the last cell is reached, print the route
 		if (i == M - 1 && j == N - 1 && sum == mat[i][j]) {
 			path.add(mat[i][j]);
-			System.out.println(path);
+			set.add(new ArrayList<>(path));
 			path.remove(path.size() - 1);
 			return;
 		}
@@ -41,13 +45,19 @@ public class SumPaths2 {
 	}
 
 	public static void main(String[] args) {
-		int[][] mat = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int[][] mat = { { 1, 2, 3 }, { 4, 3, 3 }, { 7, 8, 9 } };
 
 		List<Integer> path = new ArrayList<>();
 
 		// start from `(0, 0)` cell
 		int x = 0, y = 0;
 
-		findPaths(mat, path, x, y, 21);
+		findPaths(mat, path, x, y, 18);
+		
+		for (List<Integer> list : set){
+			System.out.println(list);
+		}
+		
+		
 	}
 }
