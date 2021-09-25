@@ -13,7 +13,6 @@ public class SumPaths2 {
 		if (mat == null || mat.length == 0) {
 			return;
 		}
-
 		int M = mat.length;
 		int N = mat[0].length;
 
@@ -22,10 +21,8 @@ public class SumPaths2 {
 			path.add(mat[i][j]);
 			System.out.println(path);
 			path.remove(path.size() - 1);
-
 			return;
 		}
-
 		// include the current cell in the path
 		path.add(mat[i][j]);
 
