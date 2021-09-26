@@ -92,7 +92,7 @@ public class MergeTwoSortedList {
 		}
 		
 		
-		//  inpu is int[] array
+		//**************  input is int[] array ****************
 		
 		public static List<int[]> mergeTwoInterval1(int[][] list1 ,int[][] list2) {
 			// write your code here
