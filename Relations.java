@@ -21,6 +21,13 @@ public class Relations {
         
         System.out.println(h1.relationship(l, "Bart", "Homer"));
         //Output: ["Bart son Homer", "Bart brother Lisa daughter Homer"]
+		
+		
+		
+// 感觉和蠡口里面那个399思路一样吧
+// follow up1如果有环a-b b-a用set存走过的点就不会绕圈
+// follow up2如果多重关系就用set存点+边 然后每次遍历neighbor也是查点+边就可以吧
+// 刚试写了下感觉work
     }
 }
 
