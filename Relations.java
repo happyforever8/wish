@@ -7,6 +7,23 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
+
+// [
+// ["Bart", "brother", "Lisa"],
+// ["Bart", "son", "Homer"],
+// ["Marge", "wife", "Homer"],
+// ["Lisa", "daughter", "Homer"]
+// ]
+
+// Given a series of relatipnships as a list of lists, and given 2 names, 
+// return all known "sequances" of relationships from name1 to name2.
+
+// Example:
+// Input: relationships =[["Bart", "brother", "Lisa"], ["Bart", "son", "Homer"],
+// 		       ["Marge", "wife", "Homer"],["Lisa", "daughter", "Homer"]], 
+//        name1 = "Bart", name2 = "Homer"
+// Output: ["Bart son Homer", "Bart brother Lisa daughter Homer"]
+
 public class Relations {
 	public static void main(String[] args) {
         System.out.println("Hello World!");
