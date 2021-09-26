@@ -28,18 +28,25 @@ public class Relations {
 	public static void main(String[] args) {
         System.out.println("Hello World!");
         
-        Helper h1 = new Helper();
+              Helper h1 = new Helper();
         
         List<List<String>> l = new ArrayList<>();
         l.add(Arrays.asList("Bart", "brother", "Lisa"));
         l.add(Arrays.asList("Bart", "son", "Homer"));
         l.add(Arrays.asList("Marge", "wife", "Homer"));
         l.add(Arrays.asList("Lisa", "daughter", "Homer"));
+//        l.add(Arrays.asList("Lisa", "daughter", "Marge"));
+//        l.add(Arrays.asList("Marge", "daughter", "Mary"));
+//        l.add(Arrays.asList("Mary", "mother-in-law", "Homer"));
+//        l.add(Arrays.asList("Mary", "grandaughter", "Lisa"));
+        
+//    		};
         
         System.out.println(h1.relationship(l, "Bart", "Homer"));
         //Output: ["Bart son Homer", "Bart brother Lisa daughter Homer"]
-		
-		
+        // out put two: [Bart brother Lisa daughter Homer, Bart brother Lisa daughter Marge wife Homer,
+        //Bart brother Lisa daughter Marge daughter Mary mother-in-law Homer, Bart son Homer]
+
 		
 // 感觉和蠡口里面那个399思路一样吧
 // follow up1如果有环a-b b-a用set存走过的点就不会绕圈
