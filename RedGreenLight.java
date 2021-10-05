@@ -1,12 +1,14 @@
 给出一个array， 比如[红, 绿, 绿, 红, 红]. 翻转⼀个⼦区间(红变绿,绿变红),使得绿灯个数最⼤. 返回区间的起点和终点.
+	
   
 public static void main(String[] args) {
+	//in which红的多余绿的差最大
 		// TODO Auto-generated method stub
 		// O means Green
 		// 1 means Red
-		String s = "011011";
-		String s1 = "101000110";
-		String s2 = "000";
+		String s = "011011";  return [1,5]
+		String s1 = "101000110"; return [6, 7]
+		String s2 = "000";  return [0, 0]
 		for (int i : maxGreenLights(s2)){
 			System.out.println(i);
 		}
@@ -15,6 +17,8 @@ public static void main(String[] args) {
 	
 	 public static int[] maxGreenLights(String s) {
 	        int[] result = new int[2];
+		// count is diff between red and green
+		 // 
 	        int count = 0, maxSum = 0, minSum = 0;
 	        int left = -1;
 	        for (int i = 0; i < s.length(); i++) {
@@ -52,6 +56,7 @@ public static int[] solve(int[] input) {
         ++left;
       }
       int tmpDelta = 2 * count1 - right + left - 1;
+      
       if (tmpDelta > delta) {
         delta = tmpDelta;
         x = left;
