@@ -16,25 +16,32 @@ public static void main(String[] args) {
 	}
 	
 	 public static int[] maxGreenLights(String s) {
-	        int[] result = new int[2];
-		// count is diff between red and green
-		 // 
-	        int count = 0, maxSum = 0, minSum = 0;
+	         int[] result = new int[2];
+	        Arrays.fill(result, -1);
+	        // minSum 表示以前的红绿差值的最小值
+	        // maxSum  表示当前的红绿差值的最大值
+	        int sum = 0, maxSum = 0, minSum = 0;
+	        
 	        int left = -1;
 	        for (int i = 0; i < s.length(); i++) {
-	            if(s.charAt(i) == '1') count++;
-	            else count--;
-	            if(count < minSum) {
-	                left = i;
-	                minSum = count;
+	            if(s.charAt(i) == '1') {//红灯加一
+	            	sum++;
+	            } else{
+	            	sum--; // 绿灯减一
 	            }
-	            if(count - minSum > maxSum) {
+	            // 表示绿灯比较多
+	            if(sum < minSum) {
+	                left = i;
+	                minSum = sum;
+	            }
+	            
+	            if(sum - minSum > maxSum) {
 	                result[0] = left + 1;
 	                result[1] = i ;
-	                maxSum = count - minSum;
+	                maxSum = sum - minSum;
 	            }
 	        }
-	        return result;
+	        return result[0] == -1 ? new int[0] : result;
 	    }
 
 
