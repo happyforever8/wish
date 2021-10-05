@@ -39,6 +39,8 @@ products can be fulfilled or max buying price available is < selling price in th
 	If can't fulfill the order add it in sellOrder heap with the remaining no. of items available.
 Wondering if there is a more optimized way to solve the problem using any other data structure.
 
+// 如果输入有stock名字的话，需要用两个hashmap
+// key 是stock name， value就是minheap 和maxheap
 package wish;
 
 import java.util.Comparator;
