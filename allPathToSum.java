@@ -61,3 +61,59 @@ public class SumPaths2 {
 		
 	}
 }
+
+====================All path from top left to bottom right====
+public static void findPaths(int[][] mat, StringBuilder sb, int i, int j){
+        // base case
+        if (mat == null || mat.length == 0) {
+            return;
+        }
+ 
+        int M = mat.length;
+        int N = mat[0].length;
+ 
+        // if the last cell is reached, print the route
+        if (i == M - 1 && j == N - 1)
+        {
+            sb.append(mat[i][j]);
+            System.out.println(sb.toString());
+            sb.setLength(sb.length() - 1);
+ 
+            return;
+        }
+ 
+        // include the current cell in the path
+        sb.append(mat[i][j]);
+ 
+        // move right
+        if ((i >= 0 && i < M && j + 1 >= 0 && j + 1 < N)) {
+            findPaths(mat, sb, i, j + 1);
+        }
+ 
+        // move down
+        if ((i + 1 >= 0 && i + 1 < M && j >= 0 && j < N)) {
+            findPaths(mat, sb, i + 1, j);
+        }
+ 
+        // backtrack: remove the current cell from the path
+        sb.setLength(sb.length() - 1);
+    }
+ 
+    public static void main(String[] args)
+    {
+        int[][] mat =
+        {
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+        };
+ 
+        StringBuilder sb = new StringBuilder();
+ 
+        // start from `(0, 0)` cell
+        int x = 0, y = 0;
+ 
+        findPaths(mat, sb, x, y);
+    }
+
+}
