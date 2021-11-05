@@ -1,3 +1,10 @@
+面试官是一个亚裔 题目莫名其妙
+给两个string，然后要求把string中的每一个character换成binary. 然后看两个string是否相同。
+然后follow up是multithreading。
+
+
+synchronized to make sure the multithreading
+
 public class HelloWorld{
 
     // Driver code
@@ -7,7 +14,7 @@ public class HelloWorld{
         strToBinary(s);
     }
     // utility function
-    static void strToBinary(String s)
+    static synchronized void strToBinary(String s)
     {
         int n = s.length();
  
@@ -35,7 +42,7 @@ public class HelloWorld{
         }
     }
  
-    static String reverse(String input)
+    static synchronized String reverse(String input)
     {
         char[] a = input.toCharArray();
         int l = 0;
